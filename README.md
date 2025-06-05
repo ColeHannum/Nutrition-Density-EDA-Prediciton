@@ -4,7 +4,7 @@ This project explores the nutritional quality of over 1,400 food items. Using a 
 
 ---
 
-## 🧹 Section 1: Exploratory Data Analysis
+## Section 1: Exploratory Data Analysis
 
 We start by formatting the data and removing illogical or extreme entries. This includes:
 - Standardizing all micronutrient features to grams
@@ -15,7 +15,7 @@ There were no missing values, and all datatypes were correct from the start.
 
 ---
 
-### 📈 Nutrition Density Distribution
+### Nutrition Density Distribution
 
 ![Nutrition Density](NutritionDensityPics/nutrition_density_distribution.png)
 
@@ -23,7 +23,7 @@ The target variable is **right-skewed** with outliers — as expected with food 
 
 ---
 
-### 🔥 Correlation Heatmap
+### Correlation Heatmap
 
 ![Heatmap](NutritionDensityPics/correlation_heatmap.png)
 
@@ -33,7 +33,7 @@ Several nutrients correlate well with Nutrition Density:
 
 ---
 
-### 📊 Top Correlated Features (Regression Lines)
+### Top Correlated Features (Regression Lines)
 
 ![Top Feature Regressions](NutritionDensityPics/top_feature_scatterplots.png)
 
@@ -41,7 +41,7 @@ Scatterplots confirm that **Calcium** shows the strongest linear relationship wi
 
 ---
 
-### 🍽️ Macronutrient Distributions
+### Macronutrient Distributions
 
 Macronutrients like Fat, Protein, Carbs, and Calories all show **right-skewed** distributions — especially Fat.
 
@@ -59,13 +59,13 @@ Macronutrients like Fat, Protein, Carbs, and Calories all show **right-skewed** 
 
 ---
 
-## 🤖 Section 2: Supervised Learning – Regression
+## Section 2: Supervised Learning – Regression
 
 We tested a range of regression models to predict Nutrition Density using scaled features and cross-validation for hyperparameter tuning.
 
 ---
 
-### 📉 Model Comparison – Mean Squared Error (MSE)
+### Model Comparison – Mean Squared Error (MSE)
 
 | Model                   | MSE       |
 |------------------------|-----------|
@@ -83,7 +83,7 @@ We tested a range of regression models to predict Nutrition Density using scaled
 
 ---
 
-### 🧠 Neural Network Summary
+### Neural Network Summary
 
 We trained a fully connected neural net using PyTorch on GPU. While test loss improved across epochs (dropping from ~4900 to ~27), the final performance was still weaker than our best linear models.
 
@@ -91,13 +91,13 @@ We trained a fully connected neural net using PyTorch on GPU. While test loss im
 
 ---
 
-## 🌀 Section 3: Unsupervised Learning – Clustering & PCA
+## Section 3: Unsupervised Learning – Clustering & PCA
 
 We used clustering to group similar foods, using log-transformed and standardized nutrient data projected with PCA.
 
 ---
 
-### 🎯 K-Means Clustering (k=5)
+### K-Means Clustering (k=5)
 
 ![KMeans PCA](NutritionDensityPics/kmeans_pca.png)
 
@@ -105,7 +105,7 @@ Clusters weren’t super distinct. There was a lot of overlap, and K-Means didn�
 
 ---
 
-### 🔍 Agglomerative (Hierarchical) Clustering
+### Agglomerative (Hierarchical) Clustering
 
 ![Hierarchical PCA](NutritionDensityPics/hierarchical_pca.png)
 
@@ -120,7 +120,7 @@ Agglomerative clustering performed better, showing clearer boundaries between fo
 
 ---
 
-## ✅ Key Takeaways
+## Key Takeaways
 
 - **Right-skewed data** is everywhere — most nutrients and the target itself
 - **Linear relationships dominate** — simple regression wins over complex methods
